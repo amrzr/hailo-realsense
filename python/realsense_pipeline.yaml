@@ -1,0 +1,30 @@
+name: realSenseApp
+elements:
+  - name: source
+    type: appsrc
+    properties:
+      is-live: true
+      block: true
+      format: time
+      caps: video/x-raw,format=BGR,width=640,height=480,framerate=30/1
+
+  - name: convert
+    type: videoconvert
+
+  - name: rgbconvert
+    type: videoconvert
+    properties:
+      target-format: RGB
+
+  - name: hailo
+    type: hailonet
+    properties:
+      hef-path: /path/to/your_model.hef  # ✅ Replace this
+
+  - name: postprocess
+    type: hailofilter
+
+  - name: sink
+    type: appsink
+    properties:
+      sync: false
