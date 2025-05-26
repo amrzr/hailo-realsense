@@ -1,5 +1,6 @@
-import sys
-sys.path.insert(1, '../python')
+import sys, os.path
+rs_dir = (os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))+ '/python/')
+sys.path.insert(1, rs_dir)
 import gi
 gi.require_version('Gst', '1.0')
 from gi.repository import Gst, GLib
