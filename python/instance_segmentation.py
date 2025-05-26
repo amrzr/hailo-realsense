@@ -97,7 +97,8 @@ def app_callback(pad, info, user_data):
             if len(track) == 1:
                 track_id = track[0].get_id()
 
-            string_to_print += (f"Detection: ID: {track_id} Label: {label} Confidence: {confidence:.2f}")
+            #string_to_print += (f"Detection: ID: {track_id} Label: {label} Confidence: {confidence:.2f}")
+            print(f"Detection: ID: {track_id} Label: {label} Confidence: {confidence:.2f}")
             # Instance segmentation mask from detection (if available)
             if True: #user_data.use_frame:
                 masks = detection.get_objects_typed(hailo.HAILO_CONF_CLASS_MASK)
@@ -122,8 +123,8 @@ def app_callback(pad, info, user_data):
                     x_min = max(x_min, 0)
                     y_max = min(y_max, reduced_frame.shape[0])
                     x_max = min(x_max, reduced_frame.shape[1])
-                    print("Centroid=",y_max-y_min, x_max-x_min)
-                    print("Distance=",depth_frame[y_max-y_min][x_max-x_min])
+                    print("Centroid = ",4*(y_max-y_min), 4*(x_max-x_min))
+                    print("Distance (cm) = ",(depth_frame[4*(y_max-y_min)][4*(x_max-x_min)])/10)
                     """
                     # Ensure ROI dimensions are valid
                     if x_max > x_min and y_max > y_min:
@@ -165,5 +166,4 @@ if __name__ == "__main__":
     # Create an instance of the user app callback class
     user_data = user_app_callback_class()
     app = GStreamerInstanceSegmentationApp(app_callback, depth_callback, user_data)
-    #depth_cap = cv2.VideoCapture('udp://127.0.0.1:5000')
     app.run()

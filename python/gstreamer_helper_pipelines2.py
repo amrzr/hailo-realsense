@@ -2,7 +2,6 @@ import os
 import sys
 import gi
 import threading
-import pyrealsense2 as rs
 import numpy as np
 
 gi.require_version('Gst', '1.0')
@@ -137,12 +136,7 @@ def DEPTH_PIPELINE(video_source, video_width=640, video_height=640, video_format
     depth_source_element = (
         'appsrc name=depthsrc is-live=true block=true format=GST_FORMAT_TIME '
         'caps=video/x-raw,format=GRAY16_LE,width=1280,height=720,framerate=30/1 ! '
-        #'queue ! fakesink'
-        'shmsink socket-path=/tmp/depth_socket shm-size=10000000 sync=false wait-for-connection=false'
-        #'videoconvert ! x264enc tune=zerolatency ! rtph264pay config-interval=1 pt=96 ! '
-        #'udpsink host=127.0.0.1 port=5000'
-        #'videoconvert ! jpegenc ! rtpjpegpay ! '
-        #'queue ! udpsink host=127.0.0.1 port=5000'
+        'queue ! fakesink'
         )
 
     depth_pipline = (

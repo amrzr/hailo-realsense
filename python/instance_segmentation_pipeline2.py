@@ -101,7 +101,6 @@ class GStreamerInstanceSegmentationApp(GStreamerApp):
             f'{tracker_pipeline} ! '
             f'{user_callback_pipeline} ! '
             f'{display_pipeline}'
-            #)
             '   '
             f'{depth_pipeline}'
         )
