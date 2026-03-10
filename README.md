@@ -5,7 +5,7 @@ This project is based on the original [Hailo AI's Raspberry Pi 5 Examples](https
 The project demonstrates the use of an Intel RealSense camera with a Hailo AI processor on a Raspberry Pi 5 running Ubuntu. Modified pipelines allow access to depth measurements. The project demonstrates the depth measurement of the objects segmented by the Yolov8s model running on Hailo AI Hat+. 
 Visit the [Hailo Official Website](https://hailo.ai/) and [Hailo Community Forum](https://community.hailo.ai/) for more information.
 
-## Install Hailo Hardware and Software Setup on Raspberry Pi running Ubuntu
+## Hailo Hardware and Software Setup on Raspberry Pi 5 running Ubuntu
 
 For instructions on how to set up Hailo's hardware and software on the Raspberry Pi 5 running Ubuntu, see the repository [Hailo Raspberry Pi 5 Ubuntu](https://github.com/canonical/pi-ai-kit-ubuntu.git). Also, look at the blog post about the setup process [Hacker’s guide to the Raspberry Pi AI kit on Ubuntu](https://ubuntu.com/blog/hackers-guide-to-the-raspberry-pi-ai-kit-on-ubuntu)
 
