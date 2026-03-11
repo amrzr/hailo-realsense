@@ -35,10 +35,6 @@ When opening a new terminal session, ensure you have sourced the environment set
 ```bash
 source setup_env.sh
 ```
-### Detection and Instance Segmentation with Realsense Camera
-
-![Detection Example](doc/images/detection.gif)
-
 #### Run the detection test example (without any depth measurement):
 ```bash
 python hailo_realsense/detection_rs.py --input realsense
